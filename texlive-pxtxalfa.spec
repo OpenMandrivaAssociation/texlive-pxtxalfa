@@ -6,7 +6,7 @@
 # catalog-version 1
 Name:		texlive-pxtxalfa
 Version:	1
-Release:	7
+Release:	8
 Summary:	Virtual maths alphabets based on pxfonts and txfonts
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/pxtxalfa
