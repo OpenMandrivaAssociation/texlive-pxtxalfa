@@ -3,7 +3,7 @@ Version:	60847
 Release:	2
 Summary:	Virtual maths alphabets based on pxfonts and txfonts
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/pxtxalfa
+URL:		https://www.ctan.org/tex-archive/fonts/pxtxalfa
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pxtxalfa.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pxtxalfa.doc.r%{version}.tar.xz
