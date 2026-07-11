@@ -1,44 +1,22 @@
-Name:		texlive-pxtxalfa
-Version:	60847
-Release:	2
+%global tl_name pxtxalfa
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2
+Release:	%{tl_revision}.1
 Summary:	Virtual maths alphabets based on pxfonts and txfonts
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/fonts/pxtxalfa
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pxtxalfa.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pxtxalfa.doc.r%{version}.tar.xz
+License:	lppl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pxtxalfa.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pxtxalfa.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package provides virtual math alphabets based on pxfonts
-and txfonts, with LaTeX support files and adjusted metrics. The
-mathalfa package offers support for this collection.
+The package provides virtual math alphabets based on pxfonts and
+txfonts, with LaTeX support files and adjusted metrics. The mathalpha
+package offers support for this collection.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-#{_texmfdistdir}/fonts/map/dvips/pxtxalfa
-%{_texmfdistdir}/fonts/tfm/public/pxtxalfa
-%{_texmfdistdir}/fonts/vf/public/pxtxalfa
-%{_texmfdistdir}/tex/latex/pxtxalfa
-%doc %{_texmfdistdir}/doc/fonts/pxtxalfa
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
